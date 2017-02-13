@@ -1,7 +1,5 @@
 # Decrypt RSA - 200
 ```
-Recover the private key and the flag.
-Hints: Check your padding
 Attachment: 133-Decrypt_RSA.zip
 ```
 ```
