@@ -62,7 +62,7 @@ e3d237a8d58eb41328c65fca337affe16835804c1b7d136bfb920a2bfe1f26670bb51d47b0242be3
 Saving PEM as priv.key
 ```
 
-### Read flag.enc
+### Read flag.txt
 ```
 $ cat flag.txt 
 Ba8ʩ͢2嘖DR̚SH%E:Z
