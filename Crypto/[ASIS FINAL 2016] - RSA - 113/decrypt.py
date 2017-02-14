@@ -33,7 +33,7 @@ def decrypt_RSA(cipherfile):
  
 print decrypt_RSA("flag.enc")
 
-# root@BOEING:/kapi/CTF/ACIS-FINAL-2016/rsa# python decrypt.py
+# $ python decrypt.py
 # ('p * q', 255.76077963827362)
 # Ciphertext with incorrect length.
 # ('p * q', 642.4116827637054)
