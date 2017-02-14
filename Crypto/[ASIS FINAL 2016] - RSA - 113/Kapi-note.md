@@ -102,7 +102,38 @@ aNfYEE7CT9si10BQqOaeWQ6OJGTg0kGwmykXN/pBZmzxG/EkgK94l66o+W9aScXV5XZfQfz7Tfw0
 AknUqW4U
 ```
 ### Let's decrypt it!!! 
-I've tried to use openssl and my python script to decrypt it but it become fail.
+Decrypt it using python script
+```
+import sys
+import base64
+from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_OAEP, PKCS1_v1_5
+
+def decrypt_RSA(privkey,cipherfile):
+    key = open(privkey, "r").read()
+    cipher = open(cipherfile, "r").read()
+    rsakey = RSA.importKey(key)
+    rsakey = PKCS1_v1_5.new(rsakey)
+    decrypted = rsakey.decrypt(base64.b64decode(cipher), None)
+    return decrypted
+ 
+ 
+print decrypt_RSA("priv.key", "flag.enc")
+```
+```
+$ python decrypt.py
+Traceback (most recent call last):
+  File "decrypt.py", line 15, in <module>
+    print decrypt_RSA("priv.key", "flag.enc")
+  File "decrypt.py", line 11, in decrypt_RSA
+    decrypted = rsakey.decrypt(base64.b64decode(cipher), None)
+  File "/usr/lib/python2.7/dist-packages/Crypto/Cipher/PKCS1_v1_5.py", line 204, in decrypt
+    raise ValueError("Ciphertext with incorrect length.")
+ValueError: Ciphertext with incorrect length.
+```
+I've tried to use openssl and my python script to decrypt it but it become fail with an error
+"ValueError: Ciphertext with incorrect length."
+
 Let's check for the last file they gave us.
 ```
 $ cat rsa.py
