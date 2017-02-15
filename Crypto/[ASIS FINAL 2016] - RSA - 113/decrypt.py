@@ -23,9 +23,9 @@ def decrypt_RSA(cipherfile):
 			break
 		except Exception as ex:
 			print ex
-            p = gmpy.next_prime(p**2 + q**2)
-            q = gmpy.next_prime(2*p*q)
-            e = gmpy.next_prime(e**2)
+			p = gmpy.next_prime(p**2 + q**2)
+			q = gmpy.next_prime(2*p*q)
+			e = gmpy.next_prime(e**2)
 			n = long(p)*long(q)
 
 decrypt_RSA("flag.enc")
