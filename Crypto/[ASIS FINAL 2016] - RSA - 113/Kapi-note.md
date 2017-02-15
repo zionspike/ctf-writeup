@@ -172,7 +172,12 @@ f.write(pubkey.exportKey())
 g = open('flag.enc', 'w')
 g.write(ext_rsa_encrypt(p, q, e, flag))
 ```
-We have to modify python script to generate RSA key manually and then try to decrypt the cipher with the key.
+There are things we've noticed:
+* flag = open('flag', 'r').read() * 30
+** flag has been multiple by 30 times so flag will be very big. This will cause an error because of length of the message.
+* try: ... exection: ...
+** pubkey.pem was generated from originated p, q value but when an error has occured p, q, e, and n will be changed. We need to calculate p, q, e, and n in the same way the encryption method did.
+
 ```
 import sys
 import base64
