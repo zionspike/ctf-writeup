@@ -173,46 +173,41 @@ g = open('flag.enc', 'w')
 g.write(ext_rsa_encrypt(p, q, e, flag))
 ```
 There are things we've noticed:
-* flag = open('flag', 'r').read() * 30
-** flag has been multiple by 30 times so flag will be very big. This will cause an error because of length of the message.
-* try: ... exection: ...
-** pubkey.pem was generated from originated p, q value but when an error has occured p, q, e, and n will be changed. We need to calculate p, q, e, and n in the same way the encryption method did.
+* flag = open('flag', 'r').read() * 30 - flag has been multiple by 30 times so flag will be very big. This will cause an error because of length of the message.
+* try: ... exection: ... - pubkey.pem was generated from originated p, q value but when an error has occured p, q, e, and n will be changed. We need to calculate p, q, e, and n in the same way the encryption method did.
 
 ```
-import sys
-import base64
-import codecs
 import gmpy
-import math
+import base64
 from Crypto.PublicKey import RSA
-from Crypto.Cipher import PKCS1_OAEP, PKCS1_v1_5
+from Crypto.Cipher import PKCS1_v1_5
 
 def decrypt_RSA(cipherfile):
-	n = 98099407767975360290660227117126057014537157468191654426411230468489043009977
-	e = 12405943493775545863
-	p = 311155972145869391293781528370734636009
-	q = 315274063651866931016337573625089033553
-	with codecs.open(cipherfile) as cipher:
-		data = cipher.read()
-		ciphertext = base64.b64decode(data)
-		while True:
-			try:
-				print('p * q', math.log(long(p), 2)+math.log(long(q), 2))
-				phi = (p - 1) * (q - 1)
-				d = gmpy.invert(e, phi)
-				key = RSA.construct((long(n), long(e), long(d)))
-				PKCS1_v1_5_cipherFormat = PKCS1_v1_5.new(key)
-				decrypted = PKCS1_v1_5_cipherFormat.decrypt(ciphertext, 0x64)
-				print(decrypted)
-				break
-			except Exception as ex:
-				print(ex)
-				p = gmpy.next_prime(p ** 2 + q ** 2)
-				q = gmpy.next_prime(2 * p * q)
-				e = gmpy.next_prime(e ** 2)
-				n = long(p)*long(q)
- 
-print decrypt_RSA("flag.enc")
+    n = 98099407767975360290660227117126057014537157468191654426411230468489043009977
+    e = 12405943493775545863
+    p = 311155972145869391293781528370734636009
+    q = 315274063651866931016337573625089033553
+    cipher = open(cipherfile, "r").read()
+    while True:
+        try:
+            # key = open(privkey, "r").read()
+            phi = (p - 1)*(q - 1)
+            d = gmpy.invert(e, phi)
+            # pubkey = RSA.construct((long(n), long(e)))
+
+            privkey = RSA.construct((long(n), long(e), long(d)))
+            key = PKCS1_v1_5.new(privkey)
+            decrypted = key.decrypt(base64.b64decode(cipher), None)
+            print decrypted
+            break
+        except Exception as ex:
+            print ex
+            p = gmpy.next_prime(p**2 + q**2)
+            q = gmpy.next_prime(2*p*q)
+            e = gmpy.next_prime(e**2)
+            n = long(p)*long(q)
+
+decrypt_RSA("flag.enc")
 ```
 Then we've got flag.
 * ASIS{F4ct0R__N_by_it3rat!ng!}
