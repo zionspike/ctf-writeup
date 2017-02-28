@@ -135,7 +135,7 @@ I've tried to use openssl and my python script to decrypt it but it become fail 
 "ValueError: Ciphertext with incorrect length."
 
 Let's check for the last file they gave us.
-```
+```python
 $ cat rsa.py
 #!/usr/bin/python
 
@@ -176,7 +176,7 @@ There are things we've noticed:
 * flag = open('flag', 'r').read() * 30 - flag has been multiplied by 30 times so flag will be very big. This will cause an error because of length of the message.
 * try: ... exection: ... - pubkey.pem was generated from originated p, q value but when an error has occured p, q, e, and n will be changed. We need to calculate p, q, e, and n in the same way the encryption method did.
 
-```
+```python
 import gmpy
 import base64
 from Crypto.PublicKey import RSA
