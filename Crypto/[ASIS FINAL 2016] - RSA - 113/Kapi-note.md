@@ -103,7 +103,7 @@ AknUqW4U
 ```
 ### Let's decrypt it!!! 
 Decrypt it using python script
-```
+```python
 import sys
 import base64
 from Crypto.PublicKey import RSA
