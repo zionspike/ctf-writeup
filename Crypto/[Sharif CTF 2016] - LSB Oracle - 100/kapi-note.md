@@ -119,7 +119,7 @@ print "lower: " + str(lower) + " " + str(long_to_bytes(lower))
 ```
 
 ### Let write a code
-```
+```python
 #!/usr/bin/python
 from subprocess import call
 import libnum, decimal
