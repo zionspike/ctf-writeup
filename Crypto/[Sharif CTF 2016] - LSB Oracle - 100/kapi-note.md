@@ -61,6 +61,7 @@ C:>
 The last one number 1/0 is the least significant bit(LSB) So we now know we have to decrypt the cipher text given in description.py with 2 options:
 * Reverse the binary and get private key
 * Attack LSB oracle
+
 Since reversing was protected by VMProptect it would take long time to do so. Then we will extract plaintext using LSB oracle. Let talk about it a little.
 
 ### LSB oracle
