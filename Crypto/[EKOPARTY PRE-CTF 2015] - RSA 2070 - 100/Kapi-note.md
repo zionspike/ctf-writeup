@@ -123,7 +123,7 @@ JfdpU1LUKtwsCxbc7fPL/zzUdWgO+of/R9WmM+QOBPagTANbJo0mpDYxvNKRjvac
 sDBkGyi88NzQxw9kOGjCWtwpRw==
 ```
 ### Let's decrypt it!!! (Python: decrypt.py)
-```
+```python
 import sys
 import base64
 from Crypto.PublicKey import RSA
