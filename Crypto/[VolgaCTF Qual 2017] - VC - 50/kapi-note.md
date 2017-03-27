@@ -55,7 +55,7 @@ root@AIRBUS:#
 Both of them are Grayscale image that mean no color applied to the images. I check for color by reading the images and printing the pixel value of them using python code. 
 ```python
 from PIL import Image
-im = Image.open("solve.png","r")
+im = Image.open("A.png","r")
 pix_val = list(im.getdata())
 for x in pix_val:
 	print x
