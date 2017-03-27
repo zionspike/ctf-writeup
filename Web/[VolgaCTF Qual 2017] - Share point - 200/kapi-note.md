@@ -10,7 +10,7 @@ When I browsed to the web I found login page which could login with any user but
 I found page that I could upload any file but not with php or html file.
 ![upload page](kapi-images/uploadphpfail.JPG)
 
-I've tried hard but it could not be bypass file extension checking.
+I've tried hard but it could not be bypassed file extension checking.
 
 I've come up with another method by uploading .htaccess. I modify .htaccess to handling .png like .php file.
 The following was content of .htaccess:
@@ -19,7 +19,7 @@ AddType application/x-httpd-php .png
 ```
 
 and then upload the .htaccess file.
-![upload htaccess](kapi-images/upload htaccess.JPG)
+![upload htaccess](kapi-images/uploadhtaccess.JPG)
 
 When I uploaded .png file the server will treat the .png file like .php file.
 
