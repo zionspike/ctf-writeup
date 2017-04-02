@@ -32,7 +32,53 @@ Content-Disposition: form-data; name="submit"
 
 Submit Query
 -----------------------------93153141210311--
+```
 
+Response
+```
+HTTP/1.1 200 OK
+Date: Sun, 02 Apr 2017 17:12:53 GMT
+Server: Apache/2.4.10 (Debian)
+Vary: Accept-Encoding
+Content-Length: 1392
+Content-Type: text/html; charset=UTF-8
+
+<style>table, th, td {border: 1px solid black; border-collapse: collapse;} th, td {padding: 5px;text-align: left;}</style>
+<center>
+<table width="500" style="background-color:lemonchiffon">
+<tr width="80" style="background-color: goldenrod; color: white;">
+<td style="padding: 10px; border: 1px solid goldenrod;">Please upload a CSV file like this: </td>
+</tr>
+<tr><td style="padding: 10px; border: 1px solid goldenrod;" >
+<i>
+&lt;!-- Invitations --&gt;
+<br>id,name,email
+<br>1,name1,email1@mail.com
+<br>2,name2,email2@mail.com
+</i>
+</td>
+</tr>
+</table>
+</div>
+<table width="500"  style="background-color:lemonchiffon">
+<form action="/index.php" method="post" enctype="multipart/form-data">
+
+<tr>
+<td width="25%" style="background-color: goldenrod; color: white; padding: 10px;border: 1px solid goldenrod; ">Select file</td>
+<td width="75%" style="background-color: goldenrod; color: white; padding: 10px; border: 1px solid goldenrod; ">
+<input style="background-color: goldenrod; color: white; padding: 10px; border: 1px solid goldenrod; " type="file" name="file" id="file" /></td>
+</tr>
+
+<tr>
+<td style="padding: 10px; border: 1px solid goldenrod; ">Submit</td>
+<td style="padding: 10px; border: 1px solid goldenrod; "><input type="submit" name="submit" /></td>
+</tr>
+
+</form>
+</table>
+</center>
+
+    <center><u>Could not convert the CSV to XML!<br>Please follow the example above.</center>
 ```
 
 We try to include local file by using XXE
