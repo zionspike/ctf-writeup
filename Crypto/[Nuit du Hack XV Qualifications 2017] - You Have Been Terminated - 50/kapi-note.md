@@ -1,11 +1,11 @@
 # You Have Been Terminated - 50
-They gave us an image ![o.jpg](o.jpg)
+They gave us an image [o.jpg](o.jpg)
 
-And also gave us 2 hits:
+And also gave us 2 hints:
 ```
 Hint 1: I heard a cat... Hint 2: There are multiple implementations of this algorithm
 ```
-After searching and trying for hours we found that the algorithm which has been used to transform this image was call (Arnold’s Cat Map)[https://en.wikipedia.org/wiki/Arnold%27s_cat_map]
+After searching and trying for hours we found that the algorithm which has been used to transform this image was call [Arnold’s Cat Map](https://en.wikipedia.org/wiki/Arnold%27s_cat_map)
 
 ```python
 import PIL.Image
