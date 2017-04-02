@@ -36,13 +36,6 @@ Submit Query
 
 Response
 ```
-HTTP/1.1 200 OK
-Date: Sun, 02 Apr 2017 17:12:53 GMT
-Server: Apache/2.4.10 (Debian)
-Vary: Accept-Encoding
-Content-Length: 1392
-Content-Type: text/html; charset=UTF-8
-
 <style>table, th, td {border: 1px solid black; border-collapse: collapse;} th, td {padding: 5px;text-align: left;}</style>
 <center>
 <table width="500" style="background-color:lemonchiffon">
@@ -114,13 +107,6 @@ Submit Query
 
 Response:
 ```
-HTTP/1.1 200 OK
-Date: Sun, 02 Apr 2017 17:11:09 GMT
-Server: Apache/2.4.10 (Debian)
-Vary: Accept-Encoding
-Content-Length: 1765
-Content-Type: text/html; charset=UTF-8
-
 <style>table, th, td {border: 1px solid black; border-collapse: collapse;} th, td {padding: 5px;text-align: left;}</style>
 <center>
 <table width="500" style="background-color:lemonchiffon">
