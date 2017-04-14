@@ -111,4 +111,3 @@ def sample(p = 11,q = 13):
 	print "[*] m = " + str(m)
 
 if __name__ == "__main__":
-	sample()
