@@ -13,7 +13,7 @@ Hints:
 ```
 
 In the pcap file we noticed that "Leftover Capture Data" was change between packets. We extrat all of them ![capture](kapifiles/Capture.PNG)
-Then we map the value that changed by the table of keycode in USB keyboard [USB keyboard keycode](http://www.usb.org/developers/hidpage/Hut1_12v2.pdf).
+Then we map the value that changed with values in the table of keycode of USB keyboard [USB keyboard keycode](http://www.usb.org/developers/hidpage/Hut1_12v2.pdf).
 ```
 00 09 f,F >> f
 00 0f l,L >> l
