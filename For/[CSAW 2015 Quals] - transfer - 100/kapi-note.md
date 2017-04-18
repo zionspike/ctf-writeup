@@ -14,7 +14,7 @@ root@BOEING:#
 
 I found flag is in format **flag{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}** then I started searching again for "xxx" and finally I found somthing in packet number 60.
 
-[searching_xxx.PNG](kapifiles/images/searching_xxx.PNG)
+![searching_xxx.PNG](kapifiles/images/searching_xxx.PNG)
 
 I followed TCP stream and found python code
 ```python
