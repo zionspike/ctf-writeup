@@ -18,7 +18,7 @@ is a mechanism that allows restricted resources (e.g. fonts) on a web page to be
 The following steps demonstrate how CORS works.
 1. Client access web1.php on originA and authenticate to the web
 ![step1](kapifiles/step1.PNG)
-2. originA accept the authentication of the client and create session cookie
+2. originA accept the authentication from the client and create session cookie
 ![step2](kapifiles/step2.PNG)
 3. Client access malicious web2.php on originB
 ![step3](kapifiles/step3.PNG)
@@ -137,6 +137,9 @@ culpa qui officia deserunt mollit anim id est laborum.</p>
 ```
 
 The result. ![step4](kapifiles/step4.PNG)
+
+I also attach the example files [web1.php](kapifiles/web1.php) and [web2.php](kapifiles/web2.php). To implement this the 2 files must be stored on different origin.
+
 
 # Ref:
 * https://en.wikipedia.org/wiki/Cross-origin_resource_sharing
