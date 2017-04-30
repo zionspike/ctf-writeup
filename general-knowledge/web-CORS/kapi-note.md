@@ -14,13 +14,13 @@ is a mechanism that allows restricted resources (e.g. fonts) on a web page to be
 3. a.html was enabled CORS for any domain. So b.html could now pull some resources from a.html(regardless of whether a.html was set HTTP header X-Fram-Option or not) 
 4. Moreover if a.html allow a web page from other domains to pull resources with credential by setting HTTP header "Access-Control-Allow-Credentials" to "true" the other web page from other domains will be able to make a request to a.html with credential e.g. cookie stored in user's browser.
 
-## XXX
+## CORS works
 The following steps demonstrate how CORS works.
 1. Client access web1.php on originA and authenticate to the web
 2. originA accept the authentication of the client and create session cookie
 3. Client access malicious web2.php on originB
 4. Client clicks the button "Click me to retrieve content from web1" on the web2.php which will send HTTP GET request to web1.php by follow the Cross-origin resource sharing protocols
-..4.1 Script on web2.php try to send HTTP GET to web1.php but the browser knows that web2.php try to do somthing cross the origin then the browser performs [preflight request](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Preflighted_requests) by sending HTTP OPTIONS to web1.php like this
+...Script on web2.php try to send HTTP GET to web1.php but the browser knows that web2.php try to do somthing cross the origin then the browser performs [preflight request](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Preflighted_requests) by sending HTTP OPTIONS to web1.php like this
 ```
 OPTIONS /CORS/web1.php HTTP/1.1
 Host: 127.0.0.1:88
@@ -33,7 +33,7 @@ Access-Control-Request-Headers: kapiheader
 Origin: http://localhost:90
 Connection: close
 ```
-..4.2 web1.php answer by setting response headers like this
+...web1.php answer by setting response headers like this
 ```
 HTTP/1.1 200 OK
 Expires: Thu, 19 Nov 1981 08:52:00 GMT
@@ -44,8 +44,8 @@ Access-Control-Allow-Methods: GET, POST, OPTIONS
 Access-Control-Allow-Headers: kapiheader
 ... snipped ...
 ```
-..4.3 from the response web1.php allow HTTP GET, POST, and OPTIONS and allow all custom HTTP headers including allow request with credential. Allowing request with credential means web2.php could request to web1.php by using session cookie authenticated by user previously in the 1st step.
-..4.4 Script on web2.php now can perform HTTP request to web1.php and attach authenticated session in the request.
+...from the response web1.php allow HTTP GET, POST, and OPTIONS and allow all custom HTTP headers including allow request with credential. Allowing request with credential means web2.php could request to web1.php by using session cookie authenticated by user previously in the 1st step.
+...Script on web2.php now can perform HTTP request to web1.php and attach authenticated session in the request.
 
 
 
