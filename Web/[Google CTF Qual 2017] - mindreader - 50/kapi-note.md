@@ -16,10 +16,10 @@ Try to enumerate OS information by reading files /etc/issue and /proc/version
 But for /proc/version there is some restriction
 ![version](kapi-files/6.PNG)
 
-Try to enumerate web platform by reading many defaul files and got requirements.txt was informative.
+Try to enumerate web platform by reading many default files and got requirements.txt was informative.
 ![requirements.txt](kapi-files/7.PNG)
 
-We knew that the web use python with Flask then try to enumerate main files of Flask application which could be any simple python extension file such as app.py, index.py, main.py blah..blah.. then you might got main.py.
+We knew that the web use python with Flask then try to enumerate main files of Flask application which could be any simple python extension file such as app.py, index.py, main.py blah..blah.. then you will got main.py.
 ```python
 from flask import Flask, request, abort
 import re
