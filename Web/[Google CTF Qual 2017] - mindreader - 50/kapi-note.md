@@ -1,9 +1,10 @@
 # mindreader - 50
-This is about web and they gave us some hints:
+This is about web and they gave us no hints:
 > Can you read my mind?
 > Challenge running at https://mindreader.web.ctfcompetition.com/
+![index](kapi-files/2.PNG)
 
-At first glance there are no comment or hidden code. After checking an input, LFI was found.
+At first glance there are no comment or hidden code. After checking an input, LFI was found at the single input field.
 
 Try to read /etc/passwd and /etc/shadow
 ![passwd](kapi-files/3.PNG)
