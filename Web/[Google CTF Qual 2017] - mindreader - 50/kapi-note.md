@@ -6,18 +6,18 @@ This is about web and they gave us some hints:
 At first glance there are no comment or hidden code. After checking an input, LFI was found.
 
 Try to read /etc/passwd and /etc/shadow
-![passwd](/kapi-files/3.PNG)
+![passwd](kapi-files/3.PNG)
 
-![shadow](/kapi-files/4.PNG)
+![shadow](kapi-files/4.PNG)
 
 Try to enumerate OS information by reading files /etc/issue and /proc/version
-![issue](/kapi-files/5.PNG)
+![issue](kapi-files/5.PNG)
 
 But for /proc/version there is some restriction
-![version](/kapi-files/6.PNG)
+![version](kapi-files/6.PNG)
 
 Try to enumerate web platform by reading many defaul files and got requirements.txt was informative.
-![requirements.txt](/kapi-files/7.PNG)
+![requirements.txt](kapi-files/7.PNG)
 
 We knew that the web use python with Flask then try to enumerate main files of Flask application which could be any simple python extension file such as app.py, index.py, main.py blah..blah.. then you might got main.py.
 ```python
@@ -60,7 +60,7 @@ The code indicates that flag is stored in system environment then you may obtain
 Trickly read file in /proc by accessing /dev instead. Because /dev/fd is a symlink to /proc/self/fd, if you specify /dev/fd/../environ that could mean /proc/self/fd/../environ ?
 
 Let's try.
-![FLAG](/kapi-files/8.PNG)
+![FLAG](kapi-files/8.PNG)
 
 The flag was:
 * CTF{ee02d9243ed6dfcf83b8d520af8502e1}
