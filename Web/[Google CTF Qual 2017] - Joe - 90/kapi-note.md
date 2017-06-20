@@ -17,6 +17,10 @@ After few look around we found that if we click on hyperlink then commands will 
 
 **let me rename you** this command will let us change Joe's name to what ever we want and it's possible to inject XSS into that name which we will change to. We use [https://requestb.in](https://requestb.in) to setup temporary server to catch requests which could be generated from anywhere.
 
+Accessing /admin show us some useful information. The admin's cookie may contain flag.
+![info](kapi-files/2.PNG)
+
+
 We change Joe's name into the following XSS and reload the page.
 ```javascript
 <script>alert(1);</script>
