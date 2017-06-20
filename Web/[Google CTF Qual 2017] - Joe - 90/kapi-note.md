@@ -9,11 +9,11 @@ Challenge running at https://joe.web.ctfcompetition.com/
 
 After few look around we found that if we click on hyperlink then commands will prompt in our input.
 
-> what is your name
-> let me rename you
-> do you know any puns
-> what is the answer to the ultimate question
-> report bug
+>> what is your name
+>> let me rename you
+>> do you know any puns
+>> what is the answer to the ultimate question
+>> report bug
 
 **let me rename you** this command will let us change Joe's name to what ever we want and it's possible to inject XSS into that name which we will change to. We use [https://requestb.in](https://requestb.in) to setup temporary server to catch requests which could be generated from anywhere.
 
