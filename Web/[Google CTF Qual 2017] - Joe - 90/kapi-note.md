@@ -24,7 +24,7 @@ We change Joe's name into the following XSS and reload the page.
 ![XSS](kapi-files/4.PNG)
 As we expected the site is vulnerable to XSS. Now it could be roughly plan an attack to steal admin cookie by sending XSS-link to admin but how it could be. 
 
-After reviewing login function we found that the login function has weakness called **session fixation** which is the session will be same value whenever we login or not. So if we pass this link to admin and let he participate to the link we might be able to catch admin's cookie.
+After reviewing login function we found that the login function has weakness called **session fixation** which is the session will be same value whenever we login or not. So if we pass this link to admin and let him participate to the link we might be able to catch admin's cookie.
 
 The following is example of my login.
 ```
