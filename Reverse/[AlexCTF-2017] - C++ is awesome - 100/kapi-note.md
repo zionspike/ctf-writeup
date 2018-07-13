@@ -1,5 +1,5 @@
 # __C++ is awesome - 100__
-The challenge is here: [link](https://github.com/ctfs/write-ups-2017/tree/master/alexctf-2017/reverse-engineering/re2-cpp-is-awesome-100)
+The challenge is here: [link](re2)
 
 > They say C++ is complex, prove them wrong!
 
