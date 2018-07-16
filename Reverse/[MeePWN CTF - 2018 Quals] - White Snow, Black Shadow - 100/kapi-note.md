@@ -27,7 +27,7 @@ Open evidence.jpg in HxD editor find for the end of JPEG file which is **\xff\xd
 	* 21f83h - 350F6h: its compressed data
 	* 350F7h - EOF: Central Directory File Header
 
-![1.png](files/1.png)
+![1.PNG](files/1.PNG)
 
 After extract data between **21f83h - 350F6h** I wrote a python to decompress Deflated data 
 ```python
@@ -56,7 +56,7 @@ The message.pdf did not contains explicit flag but the flag was hidden in very s
 
 * Copy all text into MS Word and I noticed that small text
 
-![2.png](files/2.png)
+![2.PNG](files/2.PNG)
 
 ```
 somethingMeeyou
